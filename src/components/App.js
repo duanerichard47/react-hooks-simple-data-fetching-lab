@@ -15,12 +15,15 @@ useEffect(() =>{
     fetch("https://dog.ceo/api/breeds/image/random")
     .then((response)=>response.json())
     .then((data)=>setItems(data))
+     setIsLoaded(true);
+    
 }
 ,[])
-if (!isLoaded) return <h3>Loading...</h3>;
+console.log(items)
+if (!isLoaded) return <p>Loading...</p>;
 return (
 <>
-    <p>"Loading..."</p>
+    
     <img src = {items.message} alt= "A Random Dog" />
 </>
 )
